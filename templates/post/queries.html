@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h6>Busqueda limitada y con offsets (Saltand los 5 primeros)</h6>
+    <ul>
+        {% for offset in offsets %}
+        <li>{{ author.email }}</li>
+        {% endfor %}
+    </ul>
+    <h5>Obteniendo los 10 primeros (limit)</h5>
+    <ul>
+        {% for limit in limits %}
+        <li>{{ author.email }}</li>
+        {% endfor %}
+    </ul>
+
+    <h4>Obteniendo un unico elemento (Filtrado por id)</h4>
+    <p>{{author.email}}</p>
+
+    <h3>Buscando author donde email = andrea26@example.net</h3>
+    <ul>
+        {% for elm in filtered %}
+        <li>{{ elm.name }} ({{ elm.email }})</li>
+        {% endfor %}
+    </ul>
+    <h1>Todos los autores con su email de la Bd</h1>
+    <h2>Total de autores: {{authors|length}}</h2>
+    <ul>
+        {% for author in authors %}
+        <li>{{ author.name }} ({{ author.email }})</li>
+
+        {% endfor %}
+    </ul>
+</body>
+
+</html>
